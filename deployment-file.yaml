@@ -1,0 +1,9 @@
+template-file-path: ./templates/http301-redirect.yaml
+
+#parameters: 
+#    CertId: 
+#    AllowAccessCIDR: 0.0.0.0/0
+
+#tags:
+#    key1: value1
+#    key2: value2
