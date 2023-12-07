@@ -58,6 +58,15 @@ Resources:
         - Key: Name
           Value: !Sub ${AWS::StackName}
 
+  IGW:
+    Type: AWS::EC2::InternetGateway
+
+  IGWAttachment:
+  Type: AWS::EC2::VPCGatewayAttachment
+  Properties:
+    VpcId: !Ref VPC
+    InternetGatewayId: !Ref IGW
+
   SubnetA:
     Type: AWS::EC2::Subnet
     Properties:
@@ -211,6 +220,7 @@ Resources:
 
   GAEndPointGroup:
     Type: AWS::GlobalAccelerator::EndpointGroup
+    DependsOn: IGWAttachment
     Properties:
       ListenerArn: !Ref GAListener
       EndpointGroupRegion: !Ref AWS::Region
