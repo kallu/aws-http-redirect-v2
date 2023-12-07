@@ -40,6 +40,12 @@ Mappings:
         Port: 443
         Host: carriagereturn.nl
         Path: '/fi/#{path}'
+      '102':
+        Name: carriagereturn.io
+        Protocol: HTTPS
+        Port: 443
+        Host: carriagereturn.nl
+        Path: '/io/#{path}'
     
 Conditions:
 
