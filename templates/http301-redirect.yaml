@@ -62,10 +62,10 @@ Resources:
     Type: AWS::EC2::InternetGateway
 
   IGWAttachment:
-  Type: AWS::EC2::VPCGatewayAttachment
-  Properties:
-    VpcId: !Ref VPC
-    InternetGatewayId: !Ref IGW
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref IGW
 
   SubnetA:
     Type: AWS::EC2::Subnet
@@ -201,6 +201,7 @@ Resources:
 
   GA:
     Type: AWS::GlobalAccelerator::Accelerator
+    DependsOn: IGWAttachment
     Properties:
       Name: !Ref AWS::StackName
       IpAddressType: IPV4
@@ -220,7 +221,6 @@ Resources:
 
   GAEndPointGroup:
     Type: AWS::GlobalAccelerator::EndpointGroup
-    DependsOn: IGWAttachment
     Properties:
       ListenerArn: !Ref GAListener
       EndpointGroupRegion: !Ref AWS::Region
