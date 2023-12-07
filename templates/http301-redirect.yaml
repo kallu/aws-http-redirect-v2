@@ -23,6 +23,7 @@ Parameters:
   CertId:
     Type: String
     Description: ACM certificate ID, required to enable HTTPS
+    Default: ''
 
 Mappings:
 
