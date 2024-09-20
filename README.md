@@ -43,7 +43,7 @@ from stack output and resolve GA addresses.
 
 ![output.png](output.png)
 
-> ```
+```
 $ dig +noall +answer a0805bbeb030e2a8e.awsglobalaccelerator.com
 a0805bbeb030e2a8e.awsglobalaccelerator.com. 165	IN A 13.248.218.203
 a0805bbeb030e2a8e.awsglobalaccelerator.com. 165	IN A 99.83.224.170
